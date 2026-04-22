@@ -1,0 +1,437 @@
+
+DELL@DESKTOP-NOI056Q MINGW64 ~
+$ git --version
+git version 2.54.0.windows.1
+
+DELL@DESKTOP-NOI056Q MINGW64 ~
+$ cd Desktop
+
+DELL@DESKTOP-NOI056Q MINGW64 ~/Desktop
+$ mkdir git_exp_1
+
+DELL@DESKTOP-NOI056Q MINGW64 ~/Desktop
+$ cd git_exp_1
+
+DELL@DESKTOP-NOI056Q MINGW64 ~/Desktop/git_exp_1
+$ git int
+
+
+DELL@DESKTOP-NOI056Q MINGW64 ~/Desktop/git_exp_1
+$ git init
+Initialized empty Git repository in C:/Users/DELL/Desktop/git_exp_1/.git/
+
+DELL@DESKTOP-NOI056Q MINGW64 ~/Desktop/git_exp_1 (master)
+$ git config --global user.name "madhusudhan"
+
+DELL@DESKTOP-NOI056Q MINGW64 ~/Desktop/git_exp_1 (master)
+$ git config --global user.email "madhu@google.com"
+
+DELL@DESKTOP-NOI056Q MINGW64 ~/Desktop/git_exp_1 (master)
+$ echo "this my first git exp" > README.txt
+
+DELL@DESKTOP-NOI056Q MINGW64 ~/Desktop/git_exp_1 (master)
+$ git status
+
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        README.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+
+
+
+DELL@DESKTOP-NOI056Q MINGW64 ~/Desktop/git_exp_1 (master)
+$
+
+DELL@DESKTOP-NOI056Q MINGW64 ~/Desktop/git_exp_1 (master)
+$ git add README.txt
+warning: in the working copy of 'README.txt', LF will be replaced by CRLF the next time Git touches it
+
+DELL@DESKTOP-NOI056Q MINGW64 ~/Desktop/git_exp_1 (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   README.txt
+
+
+DELL@DESKTOP-NOI056Q MINGW64 ~/Desktop/git_exp_1 (master)
+$ git commit -m "initial commit"
+[master (root-commit) 4898651] initial commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.txt
+
+DELL@DESKTOP-NOI056Q MINGW64 ~/Desktop/git_exp_1 (master)
+$ echo "do you track file changes mr" > README.txt
+
+DELL@DESKTOP-NOI056Q MINGW64 ~/Desktop/git_exp_1 (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+DELL@DESKTOP-NOI056Q MINGW64 ~/Desktop/git_exp_1 (master)
+$ git add .
+warning: in the working copy of 'README.txt', LF will be replaced by CRLF the next time Git touches it
+
+DELL@DESKTOP-NOI056Q MINGW64 ~/Desktop/git_exp_1 (master)
+$ git commit -m "updtae readmefile"
+[master ccd976e] updtae readmefile
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+DELL@DESKTOP-NOI056Q MINGW64 ~/Desktop/git_exp_1 (master)
+$ git log
+commit ccd976e229ab400b2ed53a09461e7409e4a5a27f (HEAD -> master)
+Author: madhusudhan <madhu@google.com>
+Date:   Wed Apr 22 19:04:41 2026 +0530
+
+    updtae readmefile
+
+commit 4898651e4c901486253a01d72108cdfb288c101d
+Author: madhusudhan <madhu@google.com>
+Date:   Wed Apr 22 19:00:52 2026 +0530
+
+    initial commit
+
+DELL@DESKTOP-NOI056Q MINGW64 ~/Desktop/git_exp_1 (master)
+$ history -a
+
+DELL@DESKTOP-NOI056Q MINGW64 ~/Desktop/git_exp_1 (master)
+$ git branch
+* master
+
+DELL@DESKTOP-NOI056Q MINGW64 ~/Desktop/git_exp_1 (master)
+$ git branch feature-branch
+
+DELL@DESKTOP-NOI056Q MINGW64 ~/Desktop/git_exp_1 (master)
+$ git checkout feature-branch
+Switched to branch 'feature-branch'
+
+DELL@DESKTOP-NOI056Q MINGW64 ~/Desktop/git_exp_1 (feature-branch)
+$ echo "this message is from feature branch"> README.txt
+
+DELL@DESKTOP-NOI056Q MINGW64 ~/Desktop/git_exp_1 (feature-branch)
+$ git status
+On branch feature-branch
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+DELL@DESKTOP-NOI056Q MINGW64 ~/Desktop/git_exp_1 (feature-branch)
+$ git add .
+warning: in the working copy of 'README.txt', LF will be replaced by CRLF the next time Git touches it
+
+DELL@DESKTOP-NOI056Q MINGW64 ~/Desktop/git_exp_1 (feature-branch)
+$ git commit -m "feature branch chnages"
+[feature-branch eba274c] feature branch chnages
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+DELL@DESKTOP-NOI056Q MINGW64 ~/Desktop/git_exp_1 (feature-branch)
+$ git checkout master
+Switched to branch 'master'
+
+DELL@DESKTOP-NOI056Q MINGW64 ~/Desktop/git_exp_1 (master)
+$ echo "this message is from main branch"> README.txt
+
+DELL@DESKTOP-NOI056Q MINGW64 ~/Desktop/git_exp_1 (master)
+$ git add .
+warning: in the working copy of 'README.txt', LF will be replaced by CRLF the next time Git touches it
+
+DELL@DESKTOP-NOI056Q MINGW64 ~/Desktop/git_exp_1 (master)
+$ git commit -m "hello from main branch chnage again"
+[master 01dd421] hello from main branch chnage again
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+DELL@DESKTOP-NOI056Q MINGW64 ~/Desktop/git_exp_1 (master)
+$ git merge feature-branch
+Auto-merging README.txt
+CONFLICT (content): Merge conflict in README.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+DELL@DESKTOP-NOI056Q MINGW64 ~/Desktop/git_exp_1 (master|MERGING)
+$ open README.txt
+bash: open: command not found
+
+DELL@DESKTOP-NOI056Q MINGW64 ~/Desktop/git_exp_1 (master|MERGING)
+$ git add .
+
+DELL@DESKTOP-NOI056Q MINGW64 ~/Desktop/git_exp_1 (master|MERGING)
+$ git commit -m "resolved merge confilct"
+[master 1f07fae] resolved merge confilct
+
+DELL@DESKTOP-NOI056Q MINGW64 ~/Desktop/git_exp_1 (master)
+$ git log --oneline
+1f07fae (HEAD -> master) resolved merge confilct
+01dd421 hello from main branch chnage again
+eba274c (feature-branch) feature branch chnages
+ccd976e updtae readmefile
+4898651 initial commit
+
+DELL@DESKTOP-NOI056Q MINGW64 ~/Desktop/git_exp_1 (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+DELL@DESKTOP-NOI056Q MINGW64 ~/Desktop/git_exp_1 (master)
+$ git remote add origin https://github.com/madhusudhankn02/git-lab-demo.git
+
+DELL@DESKTOP-NOI056Q MINGW64 ~/Desktop/git_exp_1 (master)
+$ git remote -v
+origin  https://github.com/madhusudhankn02/git-lab-demo.git (fetch)
+origin  https://github.com/madhusudhankn02/git-lab-demo.git (push)
+
+DELL@DESKTOP-NOI056Q MINGW64 ~/Desktop/git_exp_1 (master)
+$ git push -u origin master
+info: please complete authentication in your browser...
+Enumerating objects: 15, done.
+Counting objects: 100% (15/15), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (15/15), 1.18 KiB | 402.00 KiB/s, done.
+Total 15 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/madhusudhankn02/git-lab-demo.git
+ * [new branch]      master -> master
+branch 'master' set up to track 'origin/master'.
+
+DELL@DESKTOP-NOI056Q MINGW64 ~/Desktop/git_exp_1 (master)
+$ git push -u origin master
+branch 'master' set up to track 'origin/master'.
+Everything up-to-date
+
+DELL@DESKTOP-NOI056Q MINGW64 ~/Desktop/git_exp_1 (master)
+$ echo "new message">f1.txt
+
+DELL@DESKTOP-NOI056Q MINGW64 ~/Desktop/git_exp_1 (master)
+$ git add .
+warning: in the working copy of 'f1.txt', LF will be replaced by CRLF the next time Git touches it
+
+DELL@DESKTOP-NOI056Q MINGW64 ~/Desktop/git_exp_1 (master)
+$ git commit -m "push fl"
+[master 6361623] push fl
+ 1 file changed, 1 insertion(+)
+ create mode 100644 f1.txt
+
+DELL@DESKTOP-NOI056Q MINGW64 ~/Desktop/git_exp_1 (master)
+$ git remote add origin https://github.com/madhusudhankn02/git-lab-demo.git
+error: remote origin already exists.
+
+DELL@DESKTOP-NOI056Q MINGW64 ~/Desktop/git_exp_1 (master)
+$ cd Desktop
+bash: cd: Desktop: No such file or directory
+
+DELL@DESKTOP-NOI056Q MINGW64 ~/Desktop/git_exp_1 (master)
+$ git push
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 275 bytes | 275.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/madhusudhankn02/git-lab-demo.git
+   1f07fae..6361623  master -> master
+
+DELL@DESKTOP-NOI056Q MINGW64 ~/Desktop/git_exp_1 (master)
+$ git pull origin master
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (3/3), 985 bytes | 3.00 KiB/s, done.
+From https://github.com/madhusudhankn02/git-lab-demo
+ * branch            master     -> FETCH_HEAD
+   6361623..2d773b0  master     -> origin/master
+Updating 6361623..2d773b0
+Fast-forward
+ README.txt | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+DELL@DESKTOP-NOI056Q MINGW64 ~/Desktop/git_exp_1 (master)
+$ cat README.txt
+editing for pull request
+this message is from main branch
+
+this message is from feature branch
+
+
+DELL@DESKTOP-NOI056Q MINGW64 ~/Desktop/git_exp_1 (master)
+$ git clone https://github.com/madhusudhankn02/git-lab-demo.git
+Cloning into 'git-lab-demo'...
+remote: Enumerating objects: 21, done.
+remote: Counting objects: 100% (21/21), done.
+remote: Compressing objects: 100% (10/10), done.
+remote: Total 21 (delta 1), reused 18 (delta 1), pack-reused 0 (from 0)
+Receiving objects: 100% (21/21), done.
+Resolving deltas: 100% (1/1), done.
+
+DELL@DESKTOP-NOI056Q MINGW64 ~/Desktop/git_exp_1 (master)
+$ git tag v1.0
+
+DELL@DESKTOP-NOI056Q MINGW64 ~/Desktop/git_exp_1 (master)
+$ git tag
+v1.0
+
+DELL@DESKTOP-NOI056Q MINGW64 ~/Desktop/git_exp_1 (master)
+$ git tag -a v1.1 -m "version 1.1 release"
+
+DELL@DESKTOP-NOI056Q MINGW64 ~/Desktop/git_exp_1 (master)
+$ git show v1.0
+commit 2d773b05edd116c0f9172e3accbf0548bdea9309 (HEAD -> master, tag: v1.1, tag: v1.0, origin/master)
+Author: madhusudhankn02 <madhu.saraswathi05@gmail.com>
+Date:   Wed Apr 22 20:22:58 2026 +0530
+
+    Update README.txt
+
+diff --git a/README.txt b/README.txt
+index be5e53c..18ea5ba 100644
+--- a/README.txt
++++ b/README.txt
+@@ -1,4 +1,4 @@
+-
++editing for pull request
+ this message is from main branch
+
+ this message is from feature branch
+
+DELL@DESKTOP-NOI056Q MINGW64 ~/Desktop/git_exp_1 (master)
+$ git push origin v1.0
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/madhusudhankn02/git-lab-demo.git
+ * [new tag]         v1.0 -> v1.0
+
+DELL@DESKTOP-NOI056Q MINGW64 ~/Desktop/git_exp_1 (master)
+$ git push --tags
+Enumerating objects: 1, done.
+Counting objects: 100% (1/1), done.
+Writing objects: 100% (1/1), 164 bytes | 164.00 KiB/s, done.
+Total 1 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/madhusudhankn02/git-lab-demo.git
+ * [new tag]         v1.1 -> v1.1
+
+
+
+
+$ pullrequest:
+
+
+DELL@DESKTOP-NOI056Q MINGW64 ~
+$ git clone https://github.com/madhusudhankn02/git_pullrequest.git
+Cloning into 'git_pullrequest'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Receiving objects: 100% (3/3), done.
+
+DELL@DESKTOP-NOI056Q MINGW64 ~
+$ cd Desktop
+
+DELL@DESKTOP-NOI056Q MINGW64 ~/Desktop
+$ git clone https://github.com/madhusudhankn02/git_pullrequest.git
+Cloning into 'git_pullrequest'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Receiving objects: 100% (3/3), done.
+
+DELL@DESKTOP-NOI056Q MINGW64 ~/Desktop
+$ cd git_pullrequest
+
+DELL@DESKTOP-NOI056Q MINGW64 ~/Desktop/git_pullrequest (main)
+$ echo "this file is reated in main branch" > pullfile.txt
+
+DELL@DESKTOP-NOI056Q MINGW64 ~/Desktop/git_pullrequest (main)
+$ git add .
+warning: in the working copy of 'pullfile.txt', LF will be replaced by CRLF the next time Git touches it
+
+DELL@DESKTOP-NOI056Q MINGW64 ~/Desktop/git_pullrequest (main)
+$ git commit -m "initial commit in main"
+[main 714e68f] initial commit in main
+ 1 file changed, 1 insertion(+)
+ create mode 100644 pullfile.txt
+
+DELL@DESKTOP-NOI056Q MINGW64 ~/Desktop/git_pullrequest (main)
+$ git push origin main
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 313 bytes | 313.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+To https://github.com/madhusudhankn02/git_pullrequest.git
+   e369155..714e68f  main -> main
+
+DELL@DESKTOP-NOI056Q MINGW64 ~/Desktop/git_pullrequest (main)
+$ git branch feature-branch1
+
+DELL@DESKTOP-NOI056Q MINGW64 ~/Desktop/git_pullrequest (main)
+$ git checkout feature-branch1
+Switched to branch 'feature-branch1'
+
+DELL@DESKTOP-NOI056Q MINGW64 ~/Desktop/git_pullrequest (feature-branch1)
+$ echo "this file is change  in feature branch" > pullfile.txt
+
+DELL@DESKTOP-NOI056Q MINGW64 ~/Desktop/git_pullrequest (feature-branch1)
+$ echo "this file is change  in feature branch" >> pullfile.txt
+
+DELL@DESKTOP-NOI056Q MINGW64 ~/Desktop/git_pullrequest (feature-branch1)
+$ git add .
+warning: in the working copy of 'pullfile.txt', LF will be replaced by CRLF the next time Git touches it
+
+DELL@DESKTOP-NOI056Q MINGW64 ~/Desktop/git_pullrequest (feature-branch1)
+$ git commit -m "changes from feature -1"
+[feature-branch1 09bb40a] changes from feature -1
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+DELL@DESKTOP-NOI056Q MINGW64 ~/Desktop/git_pullrequest (feature-branch1)
+$ git push origin feature-branch1
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 325 bytes | 325.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+remote:
+remote: Create a pull request for 'feature-branch1' on GitHub by visiting:
+remote:      https://github.com/madhusudhankn02/git_pullrequest/pull/new/feature-branch1
+remote:
+To https://github.com/madhusudhankn02/git_pullrequest.git
+ * [new branch]      feature-branch1 -> feature-branch1
+
+DELL@DESKTOP-NOI056Q MINGW64 ~/Desktop/git_pullrequest (feature-branch1)
+$ git checkout mian
+error: pathspec 'mian' did not match any file(s) known to git
+
+DELL@DESKTOP-NOI056Q MINGW64 ~/Desktop/git_pullrequest (feature-branch1)
+$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+
+DELL@DESKTOP-NOI056Q MINGW64 ~/Desktop/git_pullrequest (main)
+$ git pull origin main
+remote: Enumerating objects: 1, done.
+remote: Counting objects: 100% (1/1), done.
+remote: Total 1 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (1/1), 905 bytes | 3.00 KiB/s, done.
+From https://github.com/madhusudhankn02/git_pullrequest
+ * branch            main       -> FETCH_HEAD
+   714e68f..ae2a2d1  main       -> origin/main
+Updating 714e68f..ae2a2d1
+Fast-forward
+ pullfile.txt | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
